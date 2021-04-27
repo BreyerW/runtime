@@ -680,6 +680,8 @@ namespace System.Text.Json.Serialization.Tests
             Assert.Same(firstPeople.Spouse, secondPeople);
             //despite $id, their references are intact but data changed
             //with old behaviour these asserts would fail
+            //this behaviour can be (ab)used for undo/redo
+            //Or streaming scenarios eg. Collaboration over internet
             Assert.Same(person1, firstPeople);
             Assert.Same(person2, secondPeople);
 

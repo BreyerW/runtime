@@ -132,7 +132,9 @@ namespace System.Text.Json
                 if (state.Current.ReturnValue is null)
                     converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
 
-                //Alternatively, order preserving impl but with worse perf:
+                //Alternatively, order preserving impl but with worse perf
+                //in case polymorphic de/serialization will mess with converter.CreateInstanceForReferenceResolver:
+
                 //converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
                 //string referenceId = reader.GetString()!;
                 //if (options.ResolveNewReferences)
@@ -281,6 +283,8 @@ namespace System.Text.Json
                     converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
 
                 //Alternatively, order preserving impl but with worse perf:
+                //in case polymorphic de/serialization will mess with converter.CreateInstanceForReferenceResolver:
+
                 //converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
                 //string referenceId = reader.GetString()!;
                 //if (options.ResolveNewReferences)
