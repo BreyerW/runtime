@@ -621,7 +621,69 @@ namespace System.Text.Json.Serialization.Tests
 
             Assert.Equal(json, JsonSerializer.Serialize(secondListOfPeople, options));
         }
+        [Fact]
+        public static void CustomReferenceResolverPersistentWithExternalReferences()
+        {
+            var options = new JsonSerializerOptions
+            {
+                ResolveNewReferences = true,
+                WriteIndented = true,
+                ReferenceHandler = new PresistentGuidReferenceHandler
+                {
+                    // Re-use the same resolver instance across all (de)serialiations based on this options instance.
+                    PersistentResolver = new GuidReferenceResolver()
+                }
+            };
+            var resolver = options.ReferenceHandler.CreateResolver();
 
+
+            var person1 = new PersonReference();
+            var person2 = new PersonReference();
+
+            //currently necessary for $ref metadata when doing disjoint deserialization with preserve semantic
+            //but objects can be blank slate
+            //this limitation could be potentially eliminated by guarding ResolveReference called during deserialization
+            //against nulls (create blank slate when encountering null just like AddReference is guarded when ResolveNewReferences is set)
+            //e.g. created via RuntimeHelpers.GetUninitializedObject or new'ed
+            //for my use case not necessary since i have list of ids and types before doing serialization/deserialization
+            //but something to consider as an option
+            resolver.AddReference("0b64ffdf-d155-44ad-9689-58d9adb137f3", person1);
+            resolver.AddReference("ae3c399c-058d-431d-91b0-a36c266441b9", person2);
+            string jsonPerson1 =
+@"
+  {
+    ""$id"": ""0b64ffdf-d155-44ad-9689-58d9adb137f3"",
+    ""Name"": ""John Smith"",
+    ""Spouse"": {
+       ""$ref"": ""ae3c399c-058d-431d-91b0-a36c266441b9""
+    }
+  }
+";
+            var jsonPerson2 = @"
+{
+    ""$id"": ""ae3c399c-058d-431d-91b0-a36c266441b9"",
+    ""Name"": ""Jane Smith"",
+    ""Spouse"": {
+        ""$ref"": ""0b64ffdf-d155-44ad-9689-58d9adb137f3""
+      }
+}";
+            //notice disjoint deserialization but it still preserves references and $id happens only once per object
+
+            //disjoint serialization can be done entirely with current feature set
+            //eg. by guaranteeing order of serializations
+            //or by customizing ReferenceResolver to recognize which object is the root object
+            PersonReference firstPeople = JsonSerializer.Deserialize<PersonReference>(jsonPerson1, options);
+            PersonReference secondPeople = JsonSerializer.Deserialize<PersonReference>(jsonPerson2, options);
+
+
+            Assert.Same(firstPeople, secondPeople.Spouse);
+            Assert.Same(firstPeople.Spouse, secondPeople);
+            //despite $id, their references are intact but data changed
+            //with old behaviour these asserts would fail
+            Assert.Same(person1, firstPeople);
+            Assert.Same(person2, secondPeople);
+
+        }
         internal class PresistentGuidReferenceHandler : ReferenceHandler
         {
             public ReferenceResolver PersistentResolver { get; set; }

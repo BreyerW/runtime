@@ -193,6 +193,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
     <ProjectReference Include="$(LibrariesProjectRoot)System.IO.Pipelines\src\System.IO.Pipelines.csproj" />
+    <ProjectReference Include="..\..\..\System.Collections.Immutable\src\System.Collections.Immutable.csproj" />
+    <ProjectReference Include="..\..\src\System.Text.Json.csproj" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">

@@ -245,6 +245,7 @@ namespace System.Text.Json
         public bool IgnoreNullValues { get { throw null; } set { } }
         public bool IgnoreReadOnlyFields { get { throw null; } set { } }
         public bool IgnoreReadOnlyProperties { get { throw null; } set { } }
+        public bool ResolveNewReferences { get { throw null; } set { } }
         public bool IncludeFields { get { throw null; } set { } }
         public int MaxDepth { get { throw null; } set { } }
         public System.Text.Json.Serialization.JsonNumberHandling NumberHandling { get { throw null; } set { } }
@@ -524,88 +525,88 @@ namespace System.Text.Json.Node
         public System.Text.Json.Node.JsonValue AsValue() { throw null; }
         public string GetPath() { throw null; }
         public virtual TValue GetValue<[System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembersAttribute(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors | System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicFields | System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>() { throw null; }
-        public static explicit operator bool (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator byte (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator char (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator System.DateTime (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator System.DateTimeOffset (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator decimal (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator double (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator System.Guid (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator short (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator int (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator long (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator bool? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator byte? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator char? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator System.DateTimeOffset? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator System.DateTime? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator decimal? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator double? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator System.Guid? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator short? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator int? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator long? (System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator bool(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator byte(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator char(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator System.DateTime(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator System.DateTimeOffset(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator decimal(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator double(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator System.Guid(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator short(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator int(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator long(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator bool?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator byte?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator char?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator System.DateTimeOffset?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator System.DateTime?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator decimal?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator double?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator System.Guid?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator short?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator int?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator long?(System.Text.Json.Node.JsonNode? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator sbyte? (System.Text.Json.Node.JsonNode? value) { throw null; }
-        public static explicit operator float? (System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator sbyte?(System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator float?(System.Text.Json.Node.JsonNode? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator ushort? (System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator ushort?(System.Text.Json.Node.JsonNode? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator uint? (System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator uint?(System.Text.Json.Node.JsonNode? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator ulong? (System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator ulong?(System.Text.Json.Node.JsonNode? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator sbyte (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator float (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static explicit operator string? (System.Text.Json.Node.JsonNode? value) { throw null; }
+        public static explicit operator sbyte(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator float(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator string?(System.Text.Json.Node.JsonNode? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator ushort (System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator ushort(System.Text.Json.Node.JsonNode value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator uint (System.Text.Json.Node.JsonNode value) { throw null; }
+        public static explicit operator uint(System.Text.Json.Node.JsonNode value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static explicit operator ulong (System.Text.Json.Node.JsonNode value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (bool value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (byte value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (char value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (System.DateTime value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (System.DateTimeOffset value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (decimal value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (double value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (System.Guid value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (short value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (int value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (long value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (bool? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (byte? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (char? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (System.DateTimeOffset? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (System.DateTime? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (decimal? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (double? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (System.Guid? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (short? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (int? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (long? value) { throw null; }
+        public static explicit operator ulong(System.Text.Json.Node.JsonNode value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(bool value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(byte value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(char value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(System.DateTime value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(System.DateTimeOffset value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(decimal value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(double value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(System.Guid value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(short value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(int value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(long value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(bool? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(byte? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(char? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(System.DateTimeOffset? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(System.DateTime? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(decimal? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(double? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(System.Guid? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(short? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(int? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(long? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode? (sbyte? value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (float? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(sbyte? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(float? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode? (ushort? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(ushort? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode? (uint? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(uint? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode? (ulong? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(ulong? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode (sbyte value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode (float value) { throw null; }
-        public static implicit operator System.Text.Json.Node.JsonNode? (string? value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(sbyte value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(float value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode?(string? value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode (ushort value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(ushort value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode (uint value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(uint value) { throw null; }
         [System.CLSCompliantAttribute(false)]
-        public static implicit operator System.Text.Json.Node.JsonNode (ulong value) { throw null; }
+        public static implicit operator System.Text.Json.Node.JsonNode(ulong value) { throw null; }
         public static System.Text.Json.Node.JsonNode? Parse(System.IO.Stream utf8Json, System.Text.Json.Node.JsonNodeOptions? nodeOptions = default(System.Text.Json.Node.JsonNodeOptions?), System.Text.Json.JsonDocumentOptions documentOptions = default(System.Text.Json.JsonDocumentOptions)) { throw null; }
         public static System.Text.Json.Node.JsonNode? Parse(System.ReadOnlySpan<byte> utf8Json, System.Text.Json.Node.JsonNodeOptions? nodeOptions = default(System.Text.Json.Node.JsonNodeOptions?), System.Text.Json.JsonDocumentOptions documentOptions = default(System.Text.Json.JsonDocumentOptions)) { throw null; }
         public static System.Text.Json.Node.JsonNode? Parse(string json, System.Text.Json.Node.JsonNodeOptions? nodeOptions = default(System.Text.Json.Node.JsonNodeOptions?), System.Text.Json.JsonDocumentOptions documentOptions = default(System.Text.Json.JsonDocumentOptions)) { throw null; }
@@ -656,7 +657,7 @@ namespace System.Text.Json.Serialization
     {
         protected JsonAttribute() { }
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Constructor, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Constructor, AllowMultiple = false)]
     public sealed partial class JsonConstructorAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonConstructorAttribute() { }
@@ -666,7 +667,7 @@ namespace System.Text.Json.Serialization
         internal JsonConverter() { }
         public abstract bool CanConvert(System.Type typeToConvert);
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Field | System.AttributeTargets.Property | System.AttributeTargets.Struct, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Field | System.AttributeTargets.Property | System.AttributeTargets.Struct, AllowMultiple = false)]
     public partial class JsonConverterAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         protected JsonConverterAttribute() { }
@@ -688,12 +689,12 @@ namespace System.Text.Json.Serialization
         public abstract T? Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options);
         public abstract void Write(System.Text.Json.Utf8JsonWriter writer, T value, System.Text.Json.JsonSerializerOptions options);
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple = false)]
     public sealed partial class JsonExtensionDataAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonExtensionDataAttribute() { }
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple = false)]
     public sealed partial class JsonIgnoreAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonIgnoreAttribute() { }
@@ -706,7 +707,7 @@ namespace System.Text.Json.Serialization
         WhenWritingDefault = 2,
         WhenWritingNull = 3,
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple = false)]
     public sealed partial class JsonIncludeAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonIncludeAttribute() { }
@@ -719,19 +720,19 @@ namespace System.Text.Json.Serialization
         WriteAsString = 2,
         AllowNamedFloatingPointLiterals = 4,
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Field | System.AttributeTargets.Property | System.AttributeTargets.Struct, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Field | System.AttributeTargets.Property | System.AttributeTargets.Struct, AllowMultiple = false)]
     public sealed partial class JsonNumberHandlingAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonNumberHandlingAttribute(System.Text.Json.Serialization.JsonNumberHandling handling) { }
         public System.Text.Json.Serialization.JsonNumberHandling Handling { get { throw null; } }
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple = false)]
     public sealed partial class JsonPropertyNameAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonPropertyNameAttribute(string name) { }
         public string Name { get { throw null; } }
     }
-    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly, AllowMultiple=true)]
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed partial class JsonSerializableAttribute : System.Text.Json.Serialization.JsonAttribute
     {
         public JsonSerializableAttribute(System.Type type) { }

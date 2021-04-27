@@ -125,9 +125,18 @@ namespace System.Text.Json
                     ThrowHelper.ThrowJsonException_MetadataValueWasNotString(reader.TokenType);
                 }
 
-                converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
-
                 string referenceId = reader.GetString()!;
+                if (options.ResolveNewReferences)
+                    state.Current.ReturnValue = state.ReferenceResolver.ResolveReference(referenceId);
+                //ResolveReference can fail. We guard against such scenario
+                if (state.Current.ReturnValue is null)
+                    converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
+
+                //Alternatively, order preserving impl but with worse perf:
+                //converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
+                //string referenceId = reader.GetString()!;
+                //if (options.ResolveNewReferences)
+                //state.Current.ReturnValue = state.ReferenceResolver.ResolveReference(referenceId) ?? state.Current.ReturnValue;
                 state.ReferenceResolver.AddReference(referenceId, state.Current.ReturnValue!);
 
                 // We are done reading metadata plus we instantiated the object.
@@ -264,9 +273,19 @@ namespace System.Text.Json
                     ThrowHelper.ThrowJsonException_MetadataValueWasNotString(reader.TokenType);
                 }
 
-                converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
-
                 string referenceId = reader.GetString()!;
+                if (options.ResolveNewReferences)
+                    state.Current.ReturnValue = state.ReferenceResolver.ResolveReference(referenceId);
+                //ResolveReference can fail. We guard against such scenario
+                if (state.Current.ReturnValue is null)
+                    converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
+
+                //Alternatively, order preserving impl but with worse perf:
+                //converter.CreateInstanceForReferenceResolver(ref reader, ref state, options);
+                //string referenceId = reader.GetString()!;
+                //if (options.ResolveNewReferences)
+                //state.Current.ReturnValue = state.ReferenceResolver.ResolveReference(referenceId) ?? state.Current.ReturnValue;
+
                 state.ReferenceResolver.AddReference(referenceId, state.Current.ReturnValue!);
 
                 // Need to Read $values property name.

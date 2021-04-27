@@ -49,6 +49,7 @@ namespace System.Text.Json
         private bool _haveTypesBeenCreated;
         private bool _ignoreNullValues;
         private bool _ignoreReadOnlyProperties;
+        private bool _resolveNewReferences;
         private bool _ignoreReadonlyFields;
         private bool _includeFields;
         private bool _propertyNameCaseInsensitive;
@@ -354,7 +355,29 @@ namespace System.Text.Json
                 _ignoreReadOnlyProperties = value;
             }
         }
-
+        //TryResolveExternalReferences?
+        /// <summary>
+        /// Determines whether ResolveReference should be called before AddReference
+        /// The default value is false.
+        /// </summary>
+        /// <remarks>
+        /// Read-only properties are not deserialized regardless of this setting.
+        /// </remarks>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown if this property is set after serialization or deserialization has occurred.
+        /// </exception>
+        public bool ResolveNewReferences
+        {
+            get
+            {
+                return _resolveNewReferences;
+            }
+            set
+            {
+                VerifyMutable();
+                _resolveNewReferences = value;
+            }
+        }
         /// <summary>
         /// Determines whether read-only fields are ignored during serialization.
         /// A field is read-only if it is marked with the <c>readonly</c> keyword.
