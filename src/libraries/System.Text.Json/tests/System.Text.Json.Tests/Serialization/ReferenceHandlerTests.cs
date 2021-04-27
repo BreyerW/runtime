@@ -682,6 +682,7 @@ namespace System.Text.Json.Serialization.Tests
             //with old behaviour these asserts would fail
             //this behaviour can be (ab)used for undo/redo
             //Or streaming scenarios eg. Collaboration over internet
+            //also can be used as workaround for lack of PopulateObject that is also able to work with plain arrays unlike newtonsoft
             Assert.Same(person1, firstPeople);
             Assert.Same(person2, secondPeople);
 
